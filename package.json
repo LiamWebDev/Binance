@@ -1,0 +1,22 @@
+{
+  "name": "binance",
+  "version": "1.0.0",
+  "description": "Basic tool for interacting with Binance API",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiamWebDev/Binance.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LiamWebDev/Binance/issues"
+  },
+  "homepage": "https://github.com/LiamWebDev/Binance#readme",
+  "dependencies": {
+    "node-binance-api": "^0.12.5"
+  }
+}
