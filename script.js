@@ -3,5 +3,3 @@ const binance = new Binance().options({
   APIKEY: "<key>",
   APISECRET: "<secret>",
 });
-
-console.info("Hello console");

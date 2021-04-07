@@ -2,7 +2,20 @@
 
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/bootstrap/css/bootstrap-grid.css"
+    />
+    <link href="/bootstrap/js/bootstrap.bundle.js.map" />
+    <link rel="stylesheet" type="text/css" href="/style-temp.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Trade Tool</title>
     <meta name="description" content="Basic Binance Trade Tool" />
@@ -10,6 +23,37 @@
 
   <body>
     <h1>Binance Trade Tool</h1>
+    <div class="container" id="container">
+      <div class="row" id="inputs-div">
+        <div class="col">
+          <p><b>After Fee (Exp. USDT)</b></p>
+          <input type="number" name="after-fee" id="after-fee" required />
+        </div>
+        <div class="col">
+          <p><b>Price Point</b></p>
+          <input type="number" name="price-point" id="price-point" required />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="submitDiv">
+          <button type="button" id="submitBTN" onclick="submit()">
+            <b>Submit</b>
+          </button>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col" id="break-even">
+          <h3>Information:</h3>
+        </div>
+      </div>
+      <hr />
+      <div class="row" id="firstRow">
+        <div class="col"><p>Price</p></div>
+        <div class="col"><p>Coin Gain</p></div>
+        <div class="col"><p>Coin Return (After Fee)</p></div>
+      </div>
+    </div>
   </body>
-  <script src="/script.js"></script>
+  <script src="/script-temp.js"></script>
 </html>
