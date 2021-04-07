@@ -16,8 +16,9 @@ body {
   text-align: center;
 }
 
-#second-col {
-  background-color: #1b1d23;
+#second-col,
+#fourth-col {
+  background-color: #2f343d;
   text-align: center;
 }
 
@@ -61,4 +62,19 @@ input[type="number"] {
 
 span#orig {
   font-size: 0.75rem;
+}
+
+#red {
+  color: #f84960;
+}
+
+#green {
+  color: #02c076;
+}
+
+#refresh-icon {
+  width: 45px;
+  vertical-align: middle;
+  margin-left: 10px;
+  display: none;
 }

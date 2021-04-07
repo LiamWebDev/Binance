@@ -7,10 +7,10 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="/Binance/bootstrap/css/bootstrap-grid.css"
+      href="/bootstrap/css/bootstrap-grid.css"
     />
-    <link href="/Binance/bootstrap/js/bootstrap.bundle.js.map" />
-    <link rel="stylesheet" type="text/css" href="/Binance/style-temp.css" />
+    <link href="/bootstrap/js/bootstrap.bundle.js.map" />
+    <link rel="stylesheet" type="text/css" href="/style-temp.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"
@@ -33,18 +33,28 @@
           <p><b>Price Point</b></p>
           <input type="number" name="price-point" id="price-point" required />
         </div>
+        <div class="col">
+          <p><b>Increment</b></p>
+          <input type="number" name="increment" id="increment" required />
+        </div>
       </div>
       <div class="row">
         <div class="col" id="submitDiv">
           <button type="button" id="submitBTN" onclick="submit()">
             <b>Submit</b>
           </button>
+          <img
+            src="/img/refresh-round-icon.png"
+            id="refresh-icon"
+            onclick="reset()"
+          />
         </div>
       </div>
       <hr />
       <div class="row">
-        <div class="col" id="break-even">
+        <div class="col">
           <h3>Information:</h3>
+          <div id="break-even"></div>
         </div>
       </div>
       <hr />
@@ -52,8 +62,10 @@
         <div class="col"><p>Price</p></div>
         <div class="col"><p>Coin Gain</p></div>
         <div class="col"><p>Coin Return (After Fee)</p></div>
+        <div class="col"><p>Monetary Gain</p></div>
       </div>
+      <div id="price-rows"></div>
     </div>
   </body>
-  <script src="/Binance/script-temp.js"></script>
+  <script src="/script-temp.js"></script>
 </html>

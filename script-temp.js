@@ -2,6 +2,25 @@ const inputAfterFee = document.getElementById("after-fee");
 const inputPricePoint = document.getElementById("price-point");
 const breakEvenDiv = document.getElementById("break-even");
 const containDiv = document.getElementById("container");
+const inputIncrement = document.getElementById("increment");
+const refreshIcon = document.getElementById("refresh-icon");
+const pricingRows = document.getElementById("price-rows");
+
+inputIncrement.value = 0.0001;
+
+function reset() {
+  refreshIcon.style.display = "none";
+  inputAfterFee.value = "";
+  inputPricePoint.value = "";
+  removeAllChildNodes(pricingRows);
+  removeAllChildNodes(breakEvenDiv);
+}
+
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
 
 function submit() {
   const afterFeeNumber = Number(inputAfterFee.value);
@@ -22,22 +41,36 @@ function submit() {
   const lastValue = pricePointNumber - 0.03;
 
   while (startValue >= lastValue) {
+    refreshIcon.style.display = "inline";
+    let increment = inputIncrement.value;
     let startValue2 = startValue.toPrecision(4);
     let diff = afterFeeNumber / startValue2 - originalVET;
     let calced = afterFeeNumber / startValue2;
+    let gain = diff * startValue2;
+    let paraClass = gain < 0 ? "red" : "green";
     let priceRow =
       '<div class="row"><div class="col" id="first-col"><p>' +
       startValue2 +
-      '</p></div><div class="col" id="second-col"><p>' +
+      '</p></div><div class="col" id="second-col"><p id="' +
+      paraClass +
+      '">' +
       Math.round(diff) +
-      '</p></div><div class="col" id="third-col"><p>' +
+      '</p></div><div class="col" id="third-col"><p id="' +
+      paraClass +
+      '">' +
       Math.round(calced) +
       ' <span id="orig">(' +
       originalVETround +
-      ")</span></p></div></div>";
+      ')</span></p></div><div class="col" id="fourth-col"><p id="' +
+      paraClass +
+      '">($) ' +
+      gain.toFixed(2) +
+      "</p></div></div>";
 
-    containDiv.insertAdjacentHTML("beforeend", priceRow);
+    pricingRows.insertAdjacentHTML("beforeend", priceRow);
 
-    startValue = startValue - 0.0001;
+    /*startValue = startValue - 0.0001; */
+
+    startValue = startValue - increment;
   }
 }
