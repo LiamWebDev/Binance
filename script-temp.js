@@ -31,8 +31,8 @@ function submit() {
   const originalVET = originalUSDT / pricePointNumber;
   const originalVETround = Math.round(originalVET);
 
-  const breakDiv = `<p>The USDT value before fees was ${originalUSDTround} (rounded)</p>`;
-  const breakDiv2 = `<p>The VET value before the opening trade was ${originalVETround} (rounded)</p>`;
+  const breakDiv = `<p>The USDT value before fees was ${originalUSDTround}</p>`;
+  const breakDiv2 = `<p>The VET value before the opening trade was ${originalVETround}</p>`;
 
   breakEvenDiv.insertAdjacentHTML("beforeend", breakDiv);
   breakEvenDiv.insertAdjacentHTML("beforeend", breakDiv2);
