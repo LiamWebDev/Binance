@@ -21,19 +21,10 @@ function submit() {
   let startValue = pricePointNumber + 0.001;
   const lastValue = pricePointNumber - 0.03;
 
-  console.log("start value: ", startValue);
-  console.log("last value: ", lastValue);
-
   while (startValue >= lastValue) {
     let startValue2 = startValue.toPrecision(4);
-    console.log("Start: ", startValue, "Last: ", lastValue);
-    console.log("after fee number: ", afterFeeNumber);
-    console.log("startValue: ", startValue);
-    console.log("originalVET: ", originalVET);
-
     let diff = afterFeeNumber / startValue2 - originalVET;
     let calced = afterFeeNumber / startValue2;
-    console.log("Diff: ", diff);
     let priceRow =
       '<div class="row"><div class="col" id="first-col"><p>' +
       startValue2 +
@@ -44,8 +35,6 @@ function submit() {
       ' <span id="orig">(' +
       originalVETround +
       ")</span></p></div></div>";
-
-    console.log("Row: ", priceRow);
 
     containDiv.insertAdjacentHTML("beforeend", priceRow);
 
