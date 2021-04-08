@@ -23,6 +23,8 @@ function removeAllChildNodes(parent) {
 }
 
 function submit() {
+  removeAllChildNodes(pricingRows);
+  removeAllChildNodes(breakEvenDiv);
   const afterFeeNumber = Number(inputAfterFee.value);
   const pricePointNumber = Number(inputPricePoint.value);
 
