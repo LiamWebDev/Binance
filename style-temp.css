@@ -9,6 +9,9 @@ body {
 #firstRow {
   font-weight: bold;
   text-align: center;
+  position: sticky;
+  top: 0px;
+  background-color: #181a20;
 }
 
 #first-col,
